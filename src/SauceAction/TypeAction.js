@@ -21,6 +21,7 @@ export default Creators;
 export const FormType = Types;
 
 
+// match the type of action to specific function
 const INITIAL_STATE = {count: 0, status: false};
 export const reducer = createReducer(INITIAL_STATE,{
     [Types.INCREMENT]: increment,
