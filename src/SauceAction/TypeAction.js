@@ -8,19 +8,21 @@ const {Types,Creators} = createActions({
 
 },{});
 
-function increment(state,action){
-    switch (action.type) {
-        case '':
-            
-            break;
-   
-        default:
-            break;
-    }
+export function increment(state,action){
+    console.log("default state " + JSON.stringify(state));
+    return {...state, count: action.payload + state.count}
 }
 
-function decrement(state,action){
-
+export function decrement(state,action){
+    return {...state,count: state.count - action.payload}
 }
 
-export default TypeAction;
+export default Creators;
+export const FormType = Types;
+
+
+const INITIAL_STATE = {count: 0, status: false};
+export const reducer = createReducer(INITIAL_STATE,{
+    [Types.INCREMENT]: increment,
+    [Types.DECREMENT] : decrement
+});

@@ -1,10 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {getIncrement, getDecrement} from '../action/FormAction';
-const Form = ({count,status, Increment, Decrement}) => {
+import TypeAction from '../SauceAction/TypeAction';
+const Form = ({count,status,Increment,Decrement}) => {
     return (
         <div>
-            <button onClick={() =>Increment() }>+</button>
+            <button onClick={() => Increment()}>+</button>
             <span>{count}</span>
             <button onClick={() => Decrement()}>-</button>
         </div>
@@ -20,8 +20,8 @@ const mapStateToProps = (state) => {
 
 const mapdispatchtoprops = (dispatch) => {
    return {
-     Increment : () => dispatch(getIncrement()),
-     Decrement : () => dispatch(getDecrement())
+     Increment : () => dispatch(TypeAction.increment()),
+     Decrement : () => dispatch(TypeAction.decrement())
    }
 }
 
