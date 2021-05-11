@@ -8,6 +8,10 @@ const {Types,Creators} = createActions({
 
 },{});
 
+// Types will generate key like that => {INCREMENT: "INCREMENT", DECREMENT: "DECREMENT"}
+// Creator : 
+    // => {type: "INCREMENT", payload: 1}
+    // => {type: "DECREMENT", payload: 1}
 export function increment(state,action){
     console.log("default state " + JSON.stringify(state));
     return {...state, count: action.payload + state.count}
